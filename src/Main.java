@@ -1,29 +1,26 @@
-class Frog {
-    private int id;
-    private String name;
-
-    public Frog(int id, String name){
-        this.id = id;
-        this.name = name;
-    }
-
-    public String toString(){
-        return String.format("%-4d: %s", id, name);
-    }
-//        StringBuilder sb = new StringBuilder();
-//        sb.append(id).append(": ").append(name);
-//        return sb.toString();
-//    }
-
-}
 
 public class Main {
     public static void main(String[] args) {
-        Frog frog1 = new Frog(7, "Freddy");
-        Frog frog2 = new Frog(5, "Roger");
 
-        System.out.println(frog1);
-        System.out.println(frog2);
+        Machine mach1 = new Machine();
+        mach1.start();
 
+        Person person1 = new Person("Bob");
+        person1.greed();
+
+        Info info1 = new Machine();
+        info1.showInfo();
+
+        Info info2 = person1;
+        info2.showInfo();
+
+        System.out.println();
+
+        outputInfo(mach1);
+        outputInfo(person1);
+    }
+
+    private static void outputInfo(Info info){
+        info.showInfo();
     }
 }
